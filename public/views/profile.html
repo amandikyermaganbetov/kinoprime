@@ -1,0 +1,15 @@
+<div><p>{{vm.profile.name}}</p> </div>
+<div><p>{{vm.profile.email}}</p> </div>
+
+
+<section class="blog-container">
+		<div class="blog-item" ng-repeat="post in vm.profile.posts">
+			<br>
+			<p>{{post.title}}</p>
+			<br>
+			<p>{{post.content}}</p>
+			
+		</div>	
+</section>
+
+

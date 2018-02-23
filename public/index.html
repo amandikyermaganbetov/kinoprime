@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="decode">
+<head>
+	<title>Landing Page</title>
+        <base href="/">
+        <meta charset="utf-8">
+        <meta name="description" content="more description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/style/all.css">
+
+        
+</head>
+<body>	
+	<section class="header" ng-controller="HeaderCtrl as vm">
+
+	<div ui-sref="home"></div>
+	<a ui-sref="news">News</a>
+	<a ng-if="!session" ui-sref="post">Login</a>
+    <a ng-if="!session" ui-sref="signup">Sign Up</a>
+
+    <a ng-if="session" ui-sref="profile">Profile</a>
+    <a ui-sref="createPost">createPost</a>
+	<a ng-click="vm.logout()" ng-if="session" >Logout</a>
+	</section>
+<main ui-view>
+	
+</main>
+<script type="text/javascript"  src="/js/vendor/ng.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/ng-route.min.js"></script>
+        <script type="text/javascript" src="/js/vendor/ng-cookies.min.js"></script>
+        <script type="text/javascript"  src="/app.js"></script>
+        
+        <script type="text/javascript"  src="/js/controllers/ctrl.header.js"></script>
+        <script type="text/javascript"  src="/js/controllers/ctrl.news.js"></script>
+        <script type="text/javascript"  src="/js/controllers/ctrl.post.js"></script>
+         <script type="text/javascript"  src="/js/controllers/ctrl.signup.js"></script>
+         <script type="text/javascript"  src="/js/controllers/ctrl.profile.js"></script>
+         <script type="text/javascript"  src="/js/controllers/ctrl.createPost.js"></script>
+</body>
+</html>
